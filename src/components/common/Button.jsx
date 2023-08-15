@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export default function Button({ children, rounded = 'default', className }) {
     const roundType = {
@@ -7,6 +7,10 @@ export default function Button({ children, rounded = 'default', className }) {
     }[rounded];
 
     return (
-        <button className={`p-2 ${roundType} hover:bg-gray-100 transition flex items-center ${className}`}>{children}</button>
-    )
+        <button
+            className={`p-1 md:p-2 ${roundType} flex items-center transition hover:bg-gray-100 ${className}`}
+        >
+            {children}
+        </button>
+    );
 }

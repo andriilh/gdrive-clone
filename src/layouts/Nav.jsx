@@ -10,7 +10,7 @@ import React from 'react';
 
 export default function Nav() {
     return (
-        <nav className="sticky top-0 flex h-fit w-full items-center justify-between px-3 py-3">
+        <nav className="sticky top-0 flex h-fit w-screen items-center justify-between px-3 py-3">
             <div className="cursor-pointer rounded-full p-1.5 transition-colors hover:bg-gray-100 hover:text-gray-700 md:hidden">
                 <Search className="h-10 w-10" />
             </div>

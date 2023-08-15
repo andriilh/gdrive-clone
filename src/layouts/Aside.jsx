@@ -13,7 +13,7 @@ export default function Aside() {
     const usage = 2.3;
     const progress = (usage / 15) * 100;
     return (
-        <aside className="fixed left-0 top-0 z-40 h-screen w-64 -translate-x-full transition-transform md:translate-x-0">
+        <aside className="fixed left-0 top-0 z-40 h-screen w-64 -translate-x-full bg-[#f7faff] transition-transform md:translate-x-0">
             <div className="px-4 py-10">
                 <span className="text-4xl font-bold text-blue-700">
                     Storebox

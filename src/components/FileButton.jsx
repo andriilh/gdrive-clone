@@ -8,8 +8,8 @@ export default function FileButton({ title, type = 'pdf' }) {
     }[type];
 
     return (
-        <button className="md:w-50 relative flex w-full flex-col rounded-lg bg-blue-50/80 px-3 py-2 transition hover:bg-blue-600 hover:text-blue-50">
-            <div className="w-50 inline-flex items-center">
+        <button className="relative flex w-full flex-col rounded-lg bg-blue-50/80 px-3 py-2 transition hover:bg-blue-600 hover:text-blue-50 md:w-48">
+            <div className="inline-flex w-40 items-center">
                 <div className="inline-flex items-center md:w-36 lg:w-40">
                     {createElement(fileType, { className: 'h-10 w-10' })}
                     <span className="ml-2 truncate">{title + '.' + type}</span>

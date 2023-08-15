@@ -8,12 +8,14 @@ export default function FolderButton({ type = 'default', title }) {
     }[type];
 
     return (
-        <button className="md:w-50 relative inline-flex w-full items-center rounded-lg bg-blue-50/80 px-3 py-3 transition hover:bg-blue-600 hover:text-blue-50">
+        <button className="md:w-50 relative inline-flex w-full items-center rounded-lg bg-blue-50/80 px-3 py-3 transition hover:bg-blue-600 hover:text-blue-50 focus:bg-blue-600 focus:text-blue-50">
             <div className="w-50 inline-flex md:w-36 lg:w-40">
                 {createElement(btnType, { className: 'h-10 w-10' })}
                 <span className="ml-2 truncate">{title}</span>
             </div>
-            <MoreVert className="absolute right-1 h-10 w-10" />
+            <div className="absolute right-1 aspect-square rounded-full p-1 hover:bg-blue-700">
+                <MoreVert className="h-10 w-10" />
+            </div>
         </button>
     );
 }

@@ -7,11 +7,11 @@ import FileButton from './components/FileButton';
 
 function App() {
     return (
-        <section className="flex h-screen w-screen flex-row bg-blue-50/50 font-inter">
+        <section className="flex h-screen w-screen flex-row font-inter">
             <Aside />
-            <section className="w-full md:ml-64">
+            <section className="z-0 w-screen bg-blue-50/50 md:ml-64">
                 <Nav />
-                <main className="w-full rounded-2xl bg-white text-gray-700">
+                <main className="w-full rounded-2xl bg-white text-gray-700 md:ml-3">
                     <div className="mt-5 flex items-start justify-between">
                         <div className="flex cursor-pointer items-center rounded-full px-2 py-1 text-3xl transition-all hover:bg-gray-200 hover:text-gray-950 md:ml-2 md:px-3">
                             My Files
@@ -54,7 +54,7 @@ function App() {
                         </div>
                         <div className="mt-8 px-2 md:px-4">
                             <h5 className="mb-2 font-medium">Files</h5>
-                            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                            <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-flow-col">
                                 <FileButton
                                     title="Important Document"
                                     type="pdf"
