@@ -1,49 +1,75 @@
-import { ArrowDropDown, InfoOutlined, ViewList } from '@mui/icons-material'
-import Button from './components/common/Button'
-import Aside from './layouts/Aside'
-import Nav from './layouts/Nav'
+import { ArrowDropDown, InfoOutlined, ViewList } from '@mui/icons-material';
+import Button from './components/common/Button';
+import Aside from './layouts/Aside';
+import Nav from './layouts/Nav';
+import FolderButton from './components/FolderButton';
+import FileButton from './components/FileButton';
 
 function App() {
+    return (
+        <section className="flex h-screen w-screen flex-row bg-blue-50/50 font-inter">
+            <Aside />
+            <section className="w-full md:ml-64">
+                <Nav />
+                <main className="w-full rounded-2xl bg-white text-gray-700">
+                    <div className="mt-5 flex items-start justify-between">
+                        <div className="flex cursor-pointer items-center rounded-full px-2 py-1 text-3xl transition-all hover:bg-gray-200 hover:text-gray-950 md:ml-2 md:px-3">
+                            My Files
+                            <ArrowDropDown className="ml-1 h-16 w-16" />
+                        </div>
+                        <div className="mr-1 flex items-center md:mr-4">
+                            <Button rounded="full">
+                                <ViewList className="h-10 w-10" />
+                            </Button>
+                            <Button rounded="full">
+                                <InfoOutlined className="h-10 w-10" />
+                            </Button>
+                        </div>
+                    </div>
+                    <div className="ml-1 mt-3 inline-flex gap-4 md:ml-5">
+                        <Button className="border-2 border-gray-500">
+                            Type
+                            <ArrowDropDown className="ml-1 h-16 w-16" />
+                        </Button>
+                        <Button className="border-2 border-gray-500">
+                            People
+                            <ArrowDropDown className="ml-1 h-16 w-16" />
+                        </Button>
+                        <Button className="border-2 border-gray-500">
+                            Modified
+                            <ArrowDropDown className="ml-1 h-16 w-16" />
+                        </Button>
+                    </div>
 
-  return (
-    <section className='flex flex-row font-inter w-screen h-screen bg-blue-50/50'>
-      <Aside />
-      <section className='px-4'>
-        <Nav />
-        <main className='rounded-2xl bg-white h-[calc(100vh-4.5rem)] w-full overflow-auto text-gray-700'>
-          <div className='flex items-start justify-between mt-5'>
-            <div className='rounded-full hover:bg-gray-200 hover:text-gray-950 py-1 ml-2 px-3 text-3xl flex items-center cursor-pointer transition-all'>
-              My Files
-              <ArrowDropDown className='w-16 h-16 ml-1' />
-            </div>
-            <div className='flex items-center mr-4'>
-              <Button rounded='full'>
-                <ViewList className='w-10 h-10' />
-              </Button>
-              <Button rounded='full'>
-                <InfoOutlined className='w-10 h-10' />
-              </Button>
-            </div>
-          </div>
-          <div className="inline-flex mt-3 ml-5 gap-4">
-            <Button className='border-2 border-gray-500'>
-              Type
-              <ArrowDropDown className='w-16 h-16 ml-1' />
-            </Button>
-            <Button className='border-2 border-gray-500'>
-              People
-              <ArrowDropDown className='w-16 h-16 ml-1' />
-            </Button>
-            <Button className='border-2 border-gray-500'>
-              Modified
-              <ArrowDropDown className='w-16 h-16 ml-1' />
-            </Button>
-          </div>
-
-        </main>
-      </section>
-    </section>
-  )
+                    <div className="h-[calc(100vh-11.4rem)] overflow-y-auto">
+                        <div className="mt-8 px-2 md:px-4">
+                            <h5 className="mb-2 font-medium">Folders</h5>
+                            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                                <FolderButton title="My Folder" />
+                                <FolderButton title="My Folder" />
+                                <FolderButton title="My Folder" />
+                                <FolderButton title="My Folder adfdf fadsfsd adf" />
+                                <FolderButton title="My Folder" />
+                            </div>
+                        </div>
+                        <div className="mt-8 px-2 md:px-4">
+                            <h5 className="mb-2 font-medium">Files</h5>
+                            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                                <FileButton
+                                    title="Important Document"
+                                    type="pdf"
+                                />
+                                <FileButton
+                                    title="Important Document"
+                                    type="pdf"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </section>
+        </section>
+    );
 }
 
-export default App
+export default App;
